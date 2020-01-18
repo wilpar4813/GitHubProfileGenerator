@@ -1,0 +1,28 @@
+{
+  "name": "profilegenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "electron": "^5.0.13",
+    "electron-html-to": "^2.6.0",
+    "electron-packager": "^14.2.0",
+    "electron-prebuilt": "^1.4.13",
+    "inquirer": "^7.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilpar4813/profileGenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilpar4813/profileGenerator/issues"
+  },
+  "homepage": "https://github.com/wilpar4813/profileGenerator#readme"
+}
