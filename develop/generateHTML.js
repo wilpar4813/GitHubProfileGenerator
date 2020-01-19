@@ -1,9 +1,9 @@
 const colors = {
     green: {
-      wrapperBackground: "#E6E1C3",
+      wrapperBackground: "rgb(0,128,0)",
       headerBackground: "#C1C72C",
       headerColor: "black",
-      photoBorderColor: "#black"
+      photoBorderColor: "black"
     },
     blue: {
       wrapperBackground: "#5F64D3",
@@ -12,7 +12,7 @@ const colors = {
       photoBorderColor: "#73448C"
     },
     pink: {
-      wrapperBackground: "#879CDF",
+      wrapperBackground: "#8a1d88",
       headerBackground: "#FF8374",
       headerColor: "white",
       photoBorderColor: "#FEE24C"
@@ -87,6 +87,11 @@ const colors = {
            h6 {
            font-size: 1.2em;
            }
+
+           hr{
+             border: 2px solid ${colors[data.color].photoBorderColor};
+           }
+
            .photo-header {
            position: relative;
            margin: 0 auto;
@@ -145,26 +150,41 @@ const colors = {
              margin-top: 20px;
              margin-bottom: 20px;
            }
+
+           #detail{
+           font-size:20px;
+          }
+
+           #bio{
+             font-size:24px;
+           }
   
            .card {
-             padding: 20px;
+             
              border-radius: 6px;
+             border:5px solid ${colors[data.color].photoBorderColor};
              background-color: ${colors[data.color].headerBackground};
              color: ${colors[data.color].headerColor};
-             margin: 20px;
+             padding: 20px;
+             margin:20px;
+           }
+
+           #number{
+             font-size:46px;
+             padding:auto auto;
            }
            
            .col {
            flex: 1;
            text-align: center;
            }
-  
+           
            a, a:hover {
            text-decoration: none;
            color: inherit;
            font-weight: bold;
            }
-  
+           
            @media print { 
             body { 
               zoom: .75; 
@@ -181,34 +201,40 @@ const colors = {
             <h2>My name is ${data.name}</h2>
             <h3>Currently @${data.company}</h3>
             <div class="links-nav">
-              <a class="nav-link">${data.location}</a>
-              <a class="nav-link" href="https://github.com/${data.username}">github</a>
-              <a class="nav-link" href="${data.blog}>blog</a>
+              <a class="nav-link" id = "detail">${data.location}</a>
+              <a class="nav-link" id = "detail" href="https://github.com/${data.username}">My Github</a>
+              <a class="nav-link" href="${data.blog}>Blog</a>
             </div>
           </div>
         </header>
         <div class="wrapper">
-          <div class="row">
+        <hr>
+          <div class="row" id = "bio">
+          
           ${data.bio}
           </div>
           <div class="row">
             <div class='col card'>
-              <h2>Public repositories: </h1>
-              ${data.numOfRepo}
+              <h2>Repositories</h1>
+              <hr>
+              <div id ="number">${data.numOfRepo}</div>
             </div>
             <div class="col card">
-              <h2>Followers:</h1>
-              ${data.followers}
+              <h2>Followers</h1>
+              <hr>
+              <div id ="number">${data.followers}</div>
             </div>
           </div>
           <div class="row">
             <div class="card col">
-              <h2>Stars:</h2>
-              ${data.stars}
+              <h2>Stars</h2>
+              <hr>
+              <div id ="number">${data.stars}</div>
             </div>
             <div class="card col">
-              <h2>Following:</h2>
-              ${data.followers}
+              <h2>Following</h2>
+              <hr>
+              <div id ="number">${data.followers}</div>
             </div>
           </div>
         </div>
